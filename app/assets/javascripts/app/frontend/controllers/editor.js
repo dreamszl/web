@@ -16,7 +16,7 @@ angular.module('app.frontend')
       link:function(scope, elem, attrs, ctrl) {
 
         var handler = function(event) {
-          if (event.ctrlKey || event.metaKey) {
+          if (event.metaKey) {
               switch (String.fromCharCode(event.which).toLowerCase()) {
               case 's':
                   event.preventDefault();
@@ -196,6 +196,7 @@ angular.module('app.frontend')
     this.toggleMarkdown = function() {
       if(this.editorMode == 'preview') {
         this.editorMode = 'edit';
+        this.focusEditor(0);
       } else {
         this.editorMode = 'preview';
       }
